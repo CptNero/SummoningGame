@@ -5,8 +5,8 @@ public class TransitionState : IState {
     private Vector3 currentPosition;
     private Vector3 newPosition;
 
-    private int interpolationFramesCount = 65;
-    private int elapsedFrames = 0;
+    private float interpolationTime = 0.1f;
+    private float elapsedTime = 0.0f;
 
     private char? currentLetter;
 
@@ -27,14 +27,14 @@ public class TransitionState : IState {
     }
 
     public override void Update() {
-        var interpolationRatio = (float)elapsedFrames / interpolationFramesCount;
+        var interpolationRatio = elapsedTime / interpolationTime;
         currentPosition = new Vector3(Mathf.SmoothStep(oldPosition.x, newPosition.x, interpolationRatio),
                                       Mathf.SmoothStep(oldPosition.y, newPosition.y, interpolationRatio),
                                       Mathf.SmoothStep(oldPosition.z, newPosition.z, interpolationRatio));
 
         controller.SetMarkerPosition(currentPosition);
 
-        elapsedFrames = (elapsedFrames + 1) % (interpolationFramesCount + 1);
+        elapsedTime = (elapsedTime + Time.deltaTime) % (interpolationTime + Time.deltaTime);
 
         if (currentPosition == newPosition) {
             controller.SetState(stateAfterTransition);
