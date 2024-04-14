@@ -8,7 +8,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
     private bool firstTap = true;
     private float lastTimeTapped;
 
-    public GameObject paperToOpen;
+    public GameObject objectToOpen;
 
     public bool isOpen = false;
 
@@ -22,7 +22,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            ClosePaper();
+            Close();
         }
     }
 
@@ -44,18 +44,18 @@ public class OpenOnDoubleTapController : MonoBehaviour
     private void OnDoubleTap()
     {
         // TODO: animation maybe?
-        OpenPaper();
+        Open();
     }
 
-    private void OpenPaper()
+    private void Open()
     {
         isOpen = true;
-        paperToOpen.SetActive(isOpen);
+        objectToOpen.SetActive(isOpen);
     }
         
-    private void ClosePaper()
+    private void Close()
     {
         isOpen = false;
-        paperToOpen.SetActive(isOpen);
+        objectToOpen.SetActive(isOpen);
     }
 }
