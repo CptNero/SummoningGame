@@ -93,6 +93,7 @@ public class LuigiBoardController : MonoBehaviour
         defaultState = new DefaultState(this, markerDefaultPosition);
         onLetterState = new OnLetterState(this);
         currentState = defaultState;
+        unformattedText = textMesh.text;
 
         var letters = lettersCollection.transform.GetComponentsInChildren<Transform>();
         // Hack: Skip the first one because it's the collection object.
@@ -157,7 +158,7 @@ public class LuigiBoardController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown) { 
+        if (Input.anyKeyDown) {
             foreach (var key in keysToCheckMap) {
                 if (Input.GetKeyDown(key.Key)) {
                     var keyName = key.Value;
