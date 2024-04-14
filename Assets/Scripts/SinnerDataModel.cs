@@ -19,7 +19,6 @@ public class SinnerDataModel
 
     [Serializable]
     public enum Emotion {
-        None,
         Neutral,
         Happy,
         Angry,
