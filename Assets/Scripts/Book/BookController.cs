@@ -7,12 +7,16 @@ using System;
 
 public class BookController : MonoBehaviour
 {
+    // for example "Resources/Docs/lajos"
+    public string pathToPages;
+    public string extension;
+
     // Start is called before the first frame update
     void Start()
     {
-        LoadPageContents();
+        // TODO: load for current ghost
+        LoadPageContents(pathToPages, extension);
 
-        // TODO: fix
         LoadPage(0);
     }
 
@@ -56,18 +60,24 @@ public class BookController : MonoBehaviour
     List<Page> pages = new(); 
     int currentPageIndex = 0;
 
-    void LoadPageContents()
+    void LoadPageContents(string path, string extension)
     {
-        var pagesDir = Path.Join(Application.dataPath, "Resources/Docs");
-        var directoryInfo = new DirectoryInfo(pagesDir);
-        var pages = directoryInfo.GetFiles("*.txt");
-
-        foreach (var page in pages)
+        var pagesDir = Path.Join(Application.dataPath, path);
+        try
         {
-            var reader = new StreamReader(page.OpenRead());
-            var text = reader.ReadToEnd();
+            var directoryInfo = new DirectoryInfo(pagesDir);
+            var pages = directoryInfo.GetFiles("*." + extension);
 
-            this.pages.Add(new Page(text));
+            foreach (var page in pages)
+            {
+                var reader = new StreamReader(page.OpenRead());
+                var text = reader.ReadToEnd();
+
+                this.pages.Add(new Page(text));
+            }
+        } catch
+        {
+            Debug.Log("directory not found");
         }
 
         
@@ -85,7 +95,9 @@ public class BookController : MonoBehaviour
     void UpdateCurrentPageContent()
     {
         var pageComponent = currentPageObject.GetComponent<TextMeshPro>();
-
-        pageComponent.text = pages[currentPageIndex].content.text;
+        if (pageComponent != null && currentPageIndex < pages.Count)
+        {
+            pageComponent.text = pages[currentPageIndex].content.text;
+        }
     }
 }

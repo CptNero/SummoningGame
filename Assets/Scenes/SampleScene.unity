@@ -646,6 +646,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7290836008325822136, guid: 72d1d7428fe02401a8e7e5f17c31e3e0, type: 3}
+      propertyPath: extension
+      value: txt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290836008325822136, guid: 72d1d7428fe02401a8e7e5f17c31e3e0, type: 3}
+      propertyPath: pathToPages
+      value: Resources/Docs/lajos
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
