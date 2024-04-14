@@ -38,6 +38,10 @@ public class LuigiBoardController : MonoBehaviour
 
     public List<char> charBuffer {get; set;} = new List<char>(64);
 
+    internal List<SinnerDataModel> sinners {get; set;}
+
+    internal SinnerDataModel currentSinner {get; set;}
+
     public void SetState(IState state) {
         currentState.OnExit();
         currentState = state;
@@ -69,6 +73,9 @@ public class LuigiBoardController : MonoBehaviour
                                                                                child.position.y,
                                                                                child.position.z);
         }
+
+        sinners = SinnerDataModel.LoadSinnersFromJson();
+        currentSinner = sinners.First();
 
         letterSfxs = new List<AudioClip>{
             letterSfx1,

@@ -12,7 +12,22 @@ public class DefaultState : IState {
         controller.SetMarkerPosition(defaultPosition);
 
         var bufferContents = new string(controller.charBuffer.ToArray());
-        Debug.Log(bufferContents);
+        var sinner = controller.currentSinner;
+
+        foreach (var sentence in sinner.dialogue) {
+            foreach(var hint in sentence.hints) {
+                var bufferContentsInLower = bufferContents.ToLower();
+                var expressionInLower = hint.expression.ToLower();
+
+                if (bufferContentsInLower.Equals(expressionInLower)) {
+                    Debug.Log("Bingo:");
+                    break;
+                } else {
+                    Debug.Log($"Wrong: {bufferContentsInLower} != {expressionInLower}");
+                }
+            }
+        }
+
         controller.charBuffer.Clear();
     }
 
