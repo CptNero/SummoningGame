@@ -228,6 +228,14 @@ PrefabInstance:
       value: LuigiBoard
       objectReference: {fileID: 0}
     - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2296968
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1896049
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.24305
       objectReference: {fileID: 0}
