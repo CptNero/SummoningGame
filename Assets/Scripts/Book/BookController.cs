@@ -11,6 +11,8 @@ public class BookController : MonoBehaviour
     public string pathToPages;
     public string extension;
 
+    public LuigiBoardController luigiBoardController;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +91,7 @@ public class BookController : MonoBehaviour
         currentPageIndex = index;
 
         UpdateCurrentPageContent();
+        luigiBoardController.SetUnformattedText(pages[currentPageIndex].content.text);
     }
 
     public GameObject currentPageObject;
