@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class LuigiBoardController : MonoBehaviour
@@ -9,6 +10,28 @@ public class LuigiBoardController : MonoBehaviour
 
     [SerializeField]
     private GameObject marker;
+
+    [SerializeField]
+    internal TextMeshProUGUI textMesh;
+
+    private string unformattedText {get; set;}
+
+    public void ResetText() {
+        textMesh.SetText(unformattedText);
+    }
+
+    public void SetText(string text) {
+        textMesh.SetText(text);
+    }
+
+    public string HighlightText(string partToHighlight, string color) {
+        var highlightedText = $"<color=\"{color}\">{partToHighlight}</color>";
+        var formattedText = unformattedText.Replace(partToHighlight,
+                                                    highlightedText,
+                                                    System.StringComparison.OrdinalIgnoreCase);
+
+        return formattedText;
+    }
 
     public AudioSource audioSource;
 
@@ -65,6 +88,7 @@ public class LuigiBoardController : MonoBehaviour
         defaultState = new DefaultState(this, markerDefaultPosition);
         onLetterState = new OnLetterState(this);
         currentState = defaultState;
+        unformattedText = textMesh.text;
 
         var letters = lettersCollection.transform.GetComponentsInChildren<Transform>();
         // Hack: Skip the first one because it's the collection object.
@@ -136,6 +160,8 @@ public class LuigiBoardController : MonoBehaviour
                     var letterPosition = letterPositionMap[keyName];
 
                     charBuffer.Add(keyName);
+
+                    textMesh.SetText(HighlightText(new string(charBuffer.ToArray()), "yellow"));
 
                     if (currentState == defaultState || currentState == onLetterState) {
                         SetState(new TransitionState(this, keyName, marker.transform.position, letterPosition, onLetterState));

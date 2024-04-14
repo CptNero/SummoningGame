@@ -13,7 +13,7 @@ public class OnLetterState : IState {
     public override void Update() {
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > timeToStay) {
+        if (elapsedTime > timeToStay || Input.GetKeyDown(KeyCode.Return)) {
             controller.SetState(new TransitionState(controller,
                                                     null,
                                                     controller.GetMarkerPosition(),
