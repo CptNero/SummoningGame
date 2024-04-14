@@ -1205,7 +1205,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.24305, y: 0.1004, z: 0.19104}
-  m_LocalScale: {x: 1.2296968, y: 1.1896049, z: 0.7898678}
+  m_LocalScale: {x: 0.5449401, y: 0.5271734, z: 0.35002995}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7135514104259288147}
@@ -1278,6 +1278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lettersCollection: {fileID: 7936979765835042840}
   marker: {fileID: 9007239293972089396}
+  textMesh: {fileID: 0}
   audioSource: {fileID: 5538170278739222665}
   returnSfx: {fileID: 8300000, guid: 144bbdafed7c1b2408ec657a3f86d18a, type: 3}
   spaceSfx: {fileID: 8300000, guid: f8ba5e92a86e3e540ac54293168e9183, type: 3}

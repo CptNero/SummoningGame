@@ -21,8 +21,10 @@ public class DefaultState : IState {
 
                 if (bufferContentsInLower.Equals(expressionInLower)) {
                     Debug.Log("Bingo:");
+                    controller.SetText(controller.HighlightText(bufferContents, "green"));
                     break;
                 } else {
+                    controller.SetText(controller.HighlightText(bufferContents, "red"));
                     Debug.Log($"Wrong: {bufferContentsInLower} != {expressionInLower}");
                 }
             }
