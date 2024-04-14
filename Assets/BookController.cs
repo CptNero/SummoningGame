@@ -34,11 +34,21 @@ public class BookController : MonoBehaviour
     class PageContent
     {
         public string text;
+
+        public PageContent(string text)
+        {
+            this.text = text;
+        }
     }
 
     class Page
     {
         public PageContent content;
+
+        public Page(string text)
+        {
+            this.content = new PageContent(text);
+        }
     }
 
 
@@ -48,45 +58,19 @@ public class BookController : MonoBehaviour
 
     void LoadPageContents()
     {
-        string line;
-        try
-        {
-            //Pass the file path and file name to the StreamReader constructor
-            StreamReader sr = new StreamReader("pages.txt");
-            //Read the first line of text
-            line = sr.ReadLine();
-            //Continue to read until you reach end of file
-            while (line != null)
-            {
-                //write the line to console window
-                Console.WriteLine(line);
-                //Read the next line
-                line = sr.ReadLine();
-            }
-            //close the file
-            sr.Close();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Exception: " + e.Message);
-        }
-        finally
-        {
-            Console.WriteLine("Executing finally block.");
-        }
+        var pagesDir = Path.Join(Application.dataPath, "Resources/Docs");
+        var directoryInfo = new DirectoryInfo(pagesDir);
+        var pages = directoryInfo.GetFiles("*.txt");
 
-        // TODO: REMOVE
-        var firstPage = new Page();
-        firstPage.content = new PageContent();
-        firstPage.content.text = "left";
+        foreach (var page in pages)
+        {
+            var reader = new StreamReader(page.OpenRead());
+            var text = reader.ReadToEnd();
 
-        var secondPage = new Page();
-        secondPage.content = new PageContent();
-        secondPage.content.text = "test";
+            this.pages.Add(new Page(text));
+        }
 
         
-        pages.Add(secondPage);
-        pages.Add(firstPage);
     }
 
     // NOTE: we are indexing pages from 0

@@ -192,8 +192,8 @@ MonoBehaviour:
   m_fontSizeBase: 1
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 0.5
-  m_fontSizeMax: 1
+  m_fontSizeMin: 0.1
+  m_fontSizeMax: 0.5
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -489,7 +489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1412164016
 Transform:
   m_ObjectHideFlags: 0
@@ -499,8 +499,8 @@ Transform:
   m_GameObject: {fileID: 1412164011}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 2.7875, y: 3.998622, z: 1}
+  m_LocalPosition: {x: -6.63, y: 1.67, z: 0}
+  m_LocalScale: {x: 4.2160935, y: 5.6480536, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1053975132}
@@ -670,7 +670,7 @@ Transform:
   m_GameObject: {fileID: 1592810340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.11, y: -1.71, z: 0}
   m_LocalScale: {x: 2.7875, y: 0.4375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -892,6 +892,75 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &8474767492291297985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3072644936741725054, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_Name
+      value: LuigiBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3072644936741725054, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2296968
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1896049
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.24305
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.19104
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148063005244542137, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -900,3 +969,4 @@ SceneRoots:
   - {fileID: 1412164016}
   - {fileID: 1592810344}
   - {fileID: 1841771083}
+  - {fileID: 8474767492291297985}
