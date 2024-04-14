@@ -27,12 +27,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
     }
 
     private void OnMouseDown()
-    {
-        if(isOpen)
-        {
-            ClosePaper();
-        }
-
+    { 
         if(firstTap)
         {
             lastTimeTapped = Time.time;
