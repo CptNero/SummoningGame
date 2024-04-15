@@ -18,6 +18,16 @@ public class SinnerDataModel
     }
 
     [Serializable]
+    public class KeywordsWithResponses
+    {
+        public string keyword;
+        public string response;
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public Emotion emotion;
+    }
+
+    [Serializable]
     public enum Emotion {
         Neutral,
         Happy,
@@ -47,6 +57,8 @@ public class SinnerDataModel
     public string assetName;
 
     public DocumentInfo documentInfo;
+    public string evidence;
+    public List<KeywordsWithResponses> keywordsWithResponses;
     public List<DialogueEntry> dialogue;
     public uint correctLayer;
 

@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI dialogueTextMesh;
 
+    public TextMeshProUGUI responseTextMesh;
+
     // Events
     public delegate void ChangeSinner(string sinnerName);
     public delegate void ChangeSinnerEmotion(SinnerDataModel.Emotion emotion);
@@ -96,9 +98,15 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void SetResult(string hint, bool result) {
-        Debug.Log(hint);
-        Debug.Log(result);
+    System.Collections.IEnumerator MakeTextDisappear()
+    {
+        yield return new WaitForSeconds(4);
+        responseTextMesh.text = "";
+    }
+
+    void SetResult(string hint, string response, bool result) {
+        responseTextMesh.text = response;
+        StartCoroutine(MakeTextDisappear());
     }
 
     void OnEnable() {

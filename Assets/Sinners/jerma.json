@@ -3,8 +3,16 @@
     "documentInfo": {
         "name": "Jeremy Elbertson",
         "age": "38",
-        "sins": ["DUI", "Battery", "Theft"]
+        "sins": [ "DUI", "Battery", "Theft" ]
     },
+    "evidence": "some evidence some more evidence asd some more evidence",
+    "keywordsWithResponses": [
+        {
+            "keyword": "asd",
+            "response": "lol",
+            "emotion": "Angry"
+        }
+    ],
     "dialogue": [
         {
             "speakerName": "Jeremy",

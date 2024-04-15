@@ -12,28 +12,53 @@ public class LuigiBoardController : MonoBehaviour
     private GameObject marker;
 
     [SerializeField]
-    internal TextMeshProUGUI textMesh;
+    internal TextMeshProUGUI dialogueTextMesh;
 
-    private string unformattedText {get; set;}
+    [SerializeField]
+    internal TextMeshPro evidenceTextMesh;
 
-    public void ResetText() {
-        textMesh.SetText(unformattedText);
+    private string unformattedEvidenceText { get; set; }
+    private string unformattedDialogueText {get; set;}
+
+    public void ResetEvidenceText()
+    {
+        evidenceTextMesh.SetText(unformattedEvidenceText);
     }
 
-    public void SetText(string text) {
-        textMesh.SetText(text);
+    public void SetEvidenceText(string text)
+    {
+        evidenceTextMesh.SetText(text);
     }
 
-    public string HighlightText(string partToHighlight, string color) {
+    public void ResetDialogueText() {
+        dialogueTextMesh.SetText(unformattedDialogueText);
+    }
+
+    public void SetDialogueText(string text) {
+        dialogueTextMesh.SetText(text);
+    }
+
+    public string HighlightEvidenceText(string partToHighlight, string color)
+    {
         var highlightedText = $"<color=\"{color}\">{partToHighlight}</color>";
-        var formattedText = unformattedText.Replace(partToHighlight,
+        var formattedText = unformattedEvidenceText.Replace(partToHighlight,
                                                     highlightedText,
                                                     System.StringComparison.OrdinalIgnoreCase);
 
         return formattedText;
     }
 
-    public delegate void BroadcastHintResult(string hint, bool result);
+    public string HighlightDialogueText(string partToHighlight, string color) {
+        var highlightedText = $"<color=\"{color}\">{partToHighlight}</color>";
+        var formattedText = unformattedDialogueText.Replace(partToHighlight,
+                                                    highlightedText,
+                                                    System.StringComparison.OrdinalIgnoreCase);
+
+        return formattedText;
+    }
+
+
+    public delegate void BroadcastHintResult(string hint, string response, bool result);
 
     public static event BroadcastHintResult OnBroadcastHintResult;
 
@@ -78,9 +103,14 @@ public class LuigiBoardController : MonoBehaviour
         currentState.OnEnter();
     }
 
-    public void SetUnformattedText(string text)
+    public void SetEvidenceUnformattedText(string text)
     {
-        unformattedText = text;
+        unformattedEvidenceText = text;
+    }
+
+    public void SetDialogueUnformattedText(string text)
+    {
+        unformattedDialogueText = text;
     }
 
     public void SetSinner(string sinnerName) {
@@ -99,19 +129,22 @@ public class LuigiBoardController : MonoBehaviour
         return letterSfxs[Random.Range(0, letterSfxs.Count - 1)];
     }
 
-    public void CallBroadcastHintResult(string hint, bool result) {
-        OnBroadcastHintResult(hint, result);
+    public void CallBroadcastHintResult(string hint, string response, bool result) {
+        OnBroadcastHintResult(hint, response, result);
     }
 
     void OnEnable() {
-        GameController.OnDialogueTextChange += SetUnformattedText;
+        // TODO: evidence
+        GameController.OnDialogueTextChange += SetDialogueUnformattedText;
         GameController.OnSinnerChange += SetSinner;
 
         markerDefaultPosition = marker.transform.position;
         defaultState = new DefaultState(this, markerDefaultPosition);
         onLetterState = new OnLetterState(this);
         currentState = defaultState;
-        unformattedText = textMesh.text;
+
+        unformattedDialogueText = dialogueTextMesh.text;
+        unformattedEvidenceText = evidenceTextMesh.text;
 
         var letters = lettersCollection.transform.GetComponentsInChildren<Transform>();
         // Hack: Skip the first one because it's the collection object.
@@ -174,7 +207,7 @@ public class LuigiBoardController : MonoBehaviour
     }
 
     void OnDisable() {
-        GameController.OnDialogueTextChange -= SetUnformattedText;
+        GameController.OnDialogueTextChange -= SetDialogueUnformattedText;
     }
 
     // Update is called once per frame
@@ -188,7 +221,8 @@ public class LuigiBoardController : MonoBehaviour
 
                     charBuffer.Add(keyName);
 
-                    textMesh.SetText(HighlightText(new string(charBuffer.ToArray()), "yellow"));
+                    dialogueTextMesh.SetText(HighlightDialogueText(new string(charBuffer.ToArray()), "yellow"));
+                    evidenceTextMesh.SetText(HighlightEvidenceText(new string(charBuffer.ToArray()), "yellow"));
 
                     if (currentState == defaultState || currentState == onLetterState) {
                         SetState(new TransitionState(this, keyName, marker.transform.position, letterPosition, onLetterState));
