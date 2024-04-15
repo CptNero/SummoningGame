@@ -3,8 +3,16 @@
     "documentInfo": {
         "name": "Samuel Town",
         "age": "42",
-        "sins": ["Murder", "Partnercide"]
+        "sins": [ "Murder", "Partnercide" ]
     },
+    "evidence": "some evidence some more evidence asd some more evidence",
+    "keywordsWithResponses": [
+        {
+            "keyword": "asd",
+            "response": "lol",
+            "emotion": "angry"
+        }
+    ],
     "dialogue": [
         {
             "speakerName": "Samuel",

@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI dialogueTextMesh;
 
+    public TextMeshProUGUI responseTextMesh;
     public CircleHandler circleHandler;
 
     public Hammer hammer;
@@ -122,9 +123,15 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void SetResult(string hint, bool result) {
-        Debug.Log(hint);
-        Debug.Log(result);
+    System.Collections.IEnumerator MakeTextDisappear()
+    {
+        yield return new WaitForSeconds(4);
+        responseTextMesh.text = "";
+    }
+
+    void SetResult(string hint, string response, bool result) {
+        responseTextMesh.text = response;
+        StartCoroutine(MakeTextDisappear());
     }
 
     void Judgement() {

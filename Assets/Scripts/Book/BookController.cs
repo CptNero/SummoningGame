@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System.IO;
 using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 
 public class BookController : MonoBehaviour
 {
@@ -37,24 +39,28 @@ public class BookController : MonoBehaviour
         }
     }
 
-    class PageContent
+    [Serializable]
+    public class KeywordsWithResponses
     {
-        public string text;
-
-        public PageContent(string text)
-        {
-            this.text = text;
-        }
+        public string keyword;
+        public string response;
+        public SinnerDataModel.Emotion emotion;
     }
 
-    class Page
+    public class Page
     {
-        public PageContent content;
+        public string content;
+        public KeywordsWithResponses[] keywordsWithResponses;
 
         public Page(string text)
         {
-            this.content = new PageContent(text);
+            this.content = text;
         }
+    }
+
+    public static Page CreateFromJson(string jsonString)
+    {
+        return JsonConvert.DeserializeObject<Page>(jsonString);
     }
 
     List<Page> pages = new();
@@ -73,14 +79,12 @@ public class BookController : MonoBehaviour
                 var reader = new StreamReader(page.OpenRead());
                 var text = reader.ReadToEnd();
 
-                this.pages.Add(new Page(text));
+                this.pages.Add(CreateFromJson(text));
             }
         } catch
         {
             Debug.Log("directory not found");
         }
-
-
     }
 
     // NOTE: we are indexing pages from 0
@@ -89,7 +93,7 @@ public class BookController : MonoBehaviour
         currentPageIndex = index;
 
         UpdateCurrentPageContent();
-        // luigiBoardController.SetUnformattedText(pages[currentPageIndex].content.text);
+        luigiBoardController.SetEvidenceUnformattedText(pages[currentPageIndex].content);
     }
 
     public GameObject currentPageObject;
@@ -98,7 +102,7 @@ public class BookController : MonoBehaviour
         var pageComponent = currentPageObject.GetComponent<TextMeshPro>();
         if (pageComponent != null && currentPageIndex < pages.Count)
         {
-            pageComponent.text = pages[currentPageIndex].content.text;
+            pageComponent.text = pages[currentPageIndex].content;
         }
     }
 }
