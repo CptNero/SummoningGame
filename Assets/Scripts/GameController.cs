@@ -39,14 +39,16 @@ public class GameController : MonoBehaviour
 
         public string currentDialogue = "";
 
-        public int currentDialogueIdx = 0;
+        public int currentDialogueIdx = -1;
 
         public SinnerDataModel.Emotion currentEmotion = SinnerDataModel.Emotion.Neutral;
 
         public string GetNextDialogue() {
-            if (!(currentDialogueIdx < data.dialogue.Count)) {
+            if (!(currentDialogueIdx + 1 < data.dialogue.Count)) {
                 return "";
             }
+
+            currentDialogueIdx += 1;
 
             var dialogue = data.dialogue[currentDialogueIdx];
             var dialogueText = dialogue.text;
@@ -57,7 +59,28 @@ public class GameController : MonoBehaviour
 
             OnSinnerChangeEmotion(dialogue.emotion);
 
-            currentDialogueIdx += 1;
+            Debug.Log(currentDialogueIdx);
+
+            return dialogueText;
+        }
+
+        public string GetPreviousDialogue() {
+            if (!(currentDialogueIdx > 0)) {
+                return "";
+            }
+
+            currentDialogueIdx -= 1;
+
+            var dialogue = data.dialogue[currentDialogueIdx];
+            var dialogueText = dialogue.text;
+
+            for (var idx = 0; idx < data.dialogue[currentDialogueIdx].hints.Count; idx++) {
+                dialogueText = dialogueText.Replace($"({idx})", data.dialogue[currentDialogueIdx].hints[idx].expression);
+            }
+
+            OnSinnerChangeEmotion(dialogue.emotion);
+
+            Debug.Log(currentDialogueIdx);
 
             return dialogueText;
         }
@@ -142,6 +165,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            SetDialogueText(gameState.sinnerState.GetPreviousDialogue());
+        }
+
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
             SetDialogueText(gameState.sinnerState.GetNextDialogue());
         }
