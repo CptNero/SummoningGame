@@ -10,6 +10,12 @@ public class SinnerDisplayController : MonoBehaviour
         "Prefabs/JermaSinner",
         "Prefabs/ChildSinner",
         "Prefabs/FedoraSinner",
+        "Prefabs/GrannySinner",
+        "Prefabs/EmoSinner",
+        "Prefabs/UncleSinner",
+        "Prefabs/KarenSinner",
+        "Prefabs/PunkSinner",
+        "Prefabs/NormieSinner",
     };
 
     private Dictionary<string, GameObject> sinnerAssets;

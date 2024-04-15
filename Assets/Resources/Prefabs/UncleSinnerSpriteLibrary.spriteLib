@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Emotions
+    m_Hash: 739874686
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Angry
+      m_Hash: 16779677
+      m_Sprite: {fileID: 21300000, guid: 85a8a1fa55e0f954bad1fe4b5d2baef7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 85a8a1fa55e0f954bad1fe4b5d2baef7, type: 3}
+    - m_Name: Happy
+      m_Hash: 1059892429
+      m_Sprite: {fileID: 21300000, guid: a34e5ffeb06e3fa489b18c7d348e6a81, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: a34e5ffeb06e3fa489b18c7d348e6a81, type: 3}
+    - m_Name: Nervous
+      m_Hash: 82322036
+      m_Sprite: {fileID: 21300000, guid: ebf7a03e85d59d74eb6a96ef55538fed, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: ebf7a03e85d59d74eb6a96ef55538fed, type: 3}
+    - m_Name: Neutral
+      m_Hash: 731503724
+      m_Sprite: {fileID: 21300000, guid: cef7e515054a94e438356daf45f04bb1, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: cef7e515054a94e438356daf45f04bb1, type: 3}
+    - m_Name: Sad
+      m_Hash: 662877788
+      m_Sprite: {fileID: 21300000, guid: aed8932c82335b8479a06acdd707a509, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: aed8932c82335b8479a06acdd707a509, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 5
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638488029787890111
+  m_Version: 1
