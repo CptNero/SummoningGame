@@ -756,8 +756,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Xd mukodik xd
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
+  m_sharedMaterial: {fileID: -6917097599032010950, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -890,8 +890,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Day 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
+  m_sharedMaterial: {fileID: -6917097599032010950, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1296,6 +1296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 638862877}
+  wobblyRate: 0.01
 --- !u!114 &638862877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,8 +1319,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Helo I will murder you in your sleep
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
+  m_sharedMaterial: {fileID: -6917097599032010950, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11833,6 +11834,8 @@ MonoBehaviour:
   dayTextMesh: {fileID: 568186941}
   dialogueTextMesh: {fileID: 638862877}
   responseTextMesh: {fileID: 1862223475}
+  circleHandler: {fileID: 0}
+  hammer: {fileID: 0}
 --- !u!4 &1663895629
 Transform:
   m_ObjectHideFlags: 0
@@ -11860,7 +11863,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6baccdfbb6ee244494f803e50b7c739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyPressedButton: {fileID: 0}
   button1: {fileID: 8138484965055828484}
   button2: {fileID: 3704973986208777482}
   button3: {fileID: 4901565443470423225}
@@ -16785,8 +16787,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
+  m_sharedMaterial: {fileID: -6917097599032010950, guid: 348c1ffcfe7906b4f9350db83c9ab8aa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
