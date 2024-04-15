@@ -31,8 +31,11 @@ public class OpenOnDoubleTapController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            Close();
+            if(isOpen)
+            {
             PlayCloseSound();
+             Close();
+            }
         }
     }
 
@@ -54,9 +57,8 @@ public class OpenOnDoubleTapController : MonoBehaviour
     private void OnDoubleTap()
     {
         // TODO: animation maybe?
-        Open();
         PlayOpenSound();
-
+        Open();
     }
 
     private void Open()
@@ -73,7 +75,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
 
     private void PlayOpenSound()
     {
-        OnInteraction?.Invoke(this,new OnInteractionEventArgs{audioClip = closeAudioClip});
+        OnInteraction?.Invoke(this,new OnInteractionEventArgs{audioClip = openAudioClip});
     }
     private void PlayCloseSound()
     {

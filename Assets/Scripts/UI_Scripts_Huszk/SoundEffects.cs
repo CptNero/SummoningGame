@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class SoundEffects : MonoBehaviour
 {
-    public AudioClip fiokOpen;
-    public AudioClip fiokClose;
-    public AudioClip evidenceOpen;
-    public AudioClip evidenceClose;
-    public AudioClip luigiOpen;
-    public AudioClip luigiClose;
     public AudioSource audioPlayer;
     [SerializeField] OpenDrawer tableDrawer;
     [SerializeField] OpenOnDoubleTapController docs;
