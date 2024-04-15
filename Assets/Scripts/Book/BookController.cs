@@ -57,8 +57,6 @@ public class BookController : MonoBehaviour
         }
     }
 
-
-
     List<Page> pages = new();
     int currentPageIndex = 0;
 
