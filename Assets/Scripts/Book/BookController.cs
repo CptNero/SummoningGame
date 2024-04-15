@@ -11,15 +11,15 @@ public class BookController : MonoBehaviour
 {
     // for example "Resources/Docs/lajos"
     public string pathToPages;
-    public string extension;
 
     public LuigiBoardController luigiBoardController;
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
     {
         // TODO: load for current ghost
-        LoadPageContents(pathToPages, extension);
+        LoadPageContents(pathToPages);
 
         LoadPage(0);
     }
@@ -39,18 +39,9 @@ public class BookController : MonoBehaviour
         }
     }
 
-    [Serializable]
-    public class KeywordsWithResponses
-    {
-        public string keyword;
-        public string response;
-        public SinnerDataModel.Emotion emotion;
-    }
-
     public class Page
     {
         public string content;
-        public KeywordsWithResponses[] keywordsWithResponses;
 
         public Page(string text)
         {
@@ -58,32 +49,27 @@ public class BookController : MonoBehaviour
         }
     }
 
-    public static Page CreateFromJson(string jsonString)
-    {
-        return JsonConvert.DeserializeObject<Page>(jsonString);
-    }
-
     List<Page> pages = new();
     int currentPageIndex = 0;
 
-    void LoadPageContents(string path, string extension)
+    void LoadPageContents(string path)
     {
-        var pagesDir = Path.Join(Application.dataPath, path);
-        try
+        if (path == "evidence")
         {
-            var directoryInfo = new DirectoryInfo(pagesDir);
-            var pages = directoryInfo.GetFiles("*." + extension);
-
-            foreach (var page in pages)
+            pages.Add(new Page(gameController.gameState.GetCurrentSinner().evidence));
+        }
+        else if (path == "documentInfo")
+        {
+            var currentSinner = gameController.gameState.GetCurrentSinner();
+            var pageContent =
+                "Name: " + currentSinner.documentInfo.name + "\n"
+                + "Age: " + currentSinner.documentInfo.age + "\n"
+                + "Sins: ";
+            foreach(var sin in currentSinner.documentInfo.sins)
             {
-                var reader = new StreamReader(page.OpenRead());
-                var text = reader.ReadToEnd();
-
-                this.pages.Add(CreateFromJson(text));
+                pageContent += sin + " ";
             }
-        } catch
-        {
-            Debug.Log("directory not found");
+            pages.Add(new Page(pageContent));
         }
     }
 

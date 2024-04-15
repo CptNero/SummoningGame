@@ -111,6 +111,11 @@ public class GameController : MonoBehaviour
 
             OnSinnerChange(sinnerState.data.assetName);
         }
+
+        public SinnerDataModel GetCurrentSinner()
+        {
+            return sinners[currentSinnerIdx];
+        }
     }
 
     internal GameState gameState {get; private set;}
