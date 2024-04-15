@@ -20,6 +20,8 @@ public class GameController : MonoBehaviour
 
     public Hammer hammer;
 
+    public BookController bookController;
+
     // Events
     public delegate void ChangeSinner(string sinnerName);
     public delegate void ChangeSinnerEmotion(SinnerDataModel.Emotion emotion);
@@ -116,6 +118,8 @@ public class GameController : MonoBehaviour
         {
             return sinners[currentSinnerIdx];
         }
+
+        public uint correctGuesses = 0;
     }
 
     internal GameState gameState {get; private set;}
@@ -154,7 +158,7 @@ public class GameController : MonoBehaviour
 
         var selectedCircleIdx = int.Parse(circleHandler.currentlyPressedButton.name.ToCharArray().Last().ToString());
         if (selectedCircleIdx == gameState.sinnerState.data.correctLayer) {
-            Debug.Log("You were correct!");
+            gameState.correctGuesses++;
         } else {
             Debug.Log("Wrong");
         }

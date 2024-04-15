@@ -1,0 +1,50 @@
+{
+    "assetName": "GrannySinner",
+    "documentInfo": {
+        "name": "Dorothy Jenkins",
+        "age": 100,
+        "causeOfDeath": "REDACTED",
+        "sins": ["REDACTED"]
+    },
+    "hintCount": 2,
+    "keywordsWithResponses": [
+        {
+          "keyword": "note",
+          "response": "Oh, I wouldn't know too much about that my dear, but it's not my first time here.",
+          "emotion": "Happy"
+        },
+        {
+          "keyword": "redacted",
+          "response": "O ho ho! Yes, poor little soul - my report seemed to be a little too...much.",
+          "emotion": "Happy"
+        }
+    ],
+    "dialogue": [
+        {
+            "speakerName": "Dorothy",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Hello there, sweetheart."
+        },
+        {
+            "speakerName": "Dorothy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "Look at you working so hard, what a good little soul you are!"
+        },
+        {
+            "speakerName": "Dorothy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "My sins?"
+        },
+        {
+            "speakerName": "Dorothy",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "You'll find them on your desk, I presume."
+        }
+    ],
+    "correctLayer": 7,
+    "evidence": "You find a random note amongst her documents:\n\n“The person handling the report had to suddenly\nresign after filing Mrs. Jenkins’ documents. \nWe haven’t heard from them since. Weird.”\n\n-----------------------------------\n Cryptic Resignation Note\n-----------------------------------\nTo Whom It May Concern,\n\nI regret to inform you that I must tender my\nresignation, effective immediately.\nMy time here has been both enlightening\nand harrowing. However, recent events have\nled me to realize that I have seen too much.\nThere are depths to this organization's sinners\nviolent crimes that I fear I can no longer\nnavigate without sacrificing my own sanity and safety.\n\nI leave behind this message as a warning to those\nwho dare to delve too deep. I hope you get to live\nanother day and leave ASAP.\n\nSincerely,\n\n[REDACTED]"
+}

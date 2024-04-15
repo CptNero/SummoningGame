@@ -1,0 +1,55 @@
+{
+    "assetName": "ChildSinner",
+    "documentInfo": {
+        "name": "Timothy Little",
+        "age": 7,
+        "causeOfDeath": "Nuclear Explosion",
+        "sins": ["Manslaughter ", "Illegal Possession of Nuclear Materials"]
+   },
+   "hintCount": 3,
+   "keywordsWithResponses": [
+    {
+      "keyword": "nuclear",
+      "response": "I like science!",
+      "emotion": "Happy"
+    },
+    {
+      "keyword": "uranium",
+      "response": "I like science!",
+      "emotion": "Happy"
+    },
+    {
+      "keyword": "bomb",
+      "response": "Oh um that - ehhh - that wasn't me! It wasn't me!",
+      "emotion": "Nervous"
+    }
+  ],
+   "dialogue": [
+        {
+            "speakerName": "Timothy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "Hello!"
+        },
+        {
+            "speakerName": "Timothy",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "I'm Timothy!"
+        },
+        {
+            "speakerName": "Timothy",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "I like playing video games at home!"
+        },
+        {
+            "speakerName": "Timothy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "I'm also a professional e-sports player! I'm much better than my friends!"
+          }
+  ],
+  "correctLayer": 7,
+  "evidence": "-----------------------------------\nSearch History\n-----------------------------------\n- youtbe sliem videos\n- youtube slime videos\n- fortnity skinz\n- free fortine skinz\n- free robux\n- roblox\n- how to hack a roblox account\n- how to delete a roblox account\n- how to build a nuclear bomb\n- where to get uranium\n- free uranium near me\n-----------------------------------\nPrimary School Report\n-----------------------------------\nStudent Name: Timothy Little\nGrade: 3\nTeacher: Mrs. Smith\nSchool Year: 2003-2004\nReport Date: April 15, 2004\nBehavioral Assessment:\nJames Johnson has exhibited concerning behavior throughout this school year. He has struggled to control his emotions and actions, often resorting to physical aggression and violence towards his peers and teachers. He was particularly hard to control in the context of online video games. Despite this he seems to be a particularly bright student.I urge you to look into this violent behavior."
+}

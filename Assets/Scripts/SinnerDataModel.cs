@@ -15,6 +15,8 @@ public class SinnerDataModel
         public uint age;
 
         public List<String> sins;
+
+        public string causeOfDeath;
     }
 
     [Serializable]

@@ -1,0 +1,49 @@
+{
+    "assetName": "PunkSinner",
+    "documentInfo": {
+        "name": "Devin Donovan",
+        "age": 32,
+        "cause of death": "lung cancer",
+        "sins": ["Smoking Ban Violation"]
+    },
+    "hintCount": 3,
+    "keywordsWithResponses": [
+      {
+        "keyword": "smoking",
+        "response": "Yeah, what about it? I know it ain't good for me but I just can't quit!",
+        "emotion": "Happy"
+      },
+      {
+        "keyword": "receipt",
+        "response": "Yeah, it wasn't very good for my wallet either, not just my lungs. Heh.",
+        "emotion": "Nervous"
+      },
+      {
+        "keyword": "report",
+        "response": "Yeah I remember that, that was my neighbor. Can't have a smoke in peace anymore!",
+        "emotion": "Angry"
+      }
+    ],
+    "dialogue": [
+        {
+            "speakerName": "Devin",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Yo, what's up man."
+        },
+        {
+            "speakerName": "Devin",
+            "emotion": "Sad",
+            "hints": [],
+            "text": "Pretty warm in here, isn't it, do you have AC?"
+        },
+        {
+            "speakerName": "Devin",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "You don't mind me smoking here, do you?"
+        }
+    ],
+    "correctLayer": 3,
+    "evidence": "-----------------------------------\n Hell P.D. Report\n-----------------------------------\nDevin Donovan was observed violating the \nsmoking ban by smoking in a restricted area\nwhere smoking is prohibited.\n\nThe suspect, who was later identified as \nDevin Donovan was approached and informed\nabout the violation. The suspect was asked \nto cease smoking immediately. The incident\nwas documented for further action.\n\n-----------------------------------\n Grocery Store Receipt\n-----------------------------------\n\nStore Name: Fresh Mart\nAddress: 123 Main Street, Springfield\nPhone: (666) 666-6666\nDate: April 15, 2004\nRegister: 007\nCashier: Jane Smith\n\n-----------------------------------\n\n| Qty | Description | Price |\n|-----|-----------------------|---------|\n| 50 | Hellboro Cigarettes | $150.00 |\n\n-----------------------------------\n\nSubtotal: $150.00\nTax (7%): $10.50\nTotal: $160.50\n\n-----------------------------------\n\nThank you for shopping at Fresh Mart!"
+}

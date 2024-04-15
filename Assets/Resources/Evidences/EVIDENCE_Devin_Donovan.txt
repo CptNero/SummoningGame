@@ -1,0 +1,36 @@
+-----------------------------------
+        Hell P.D. Report
+-----------------------------------
+Devin Donovan was observed violating the smoking ban by smoking in a restricted area where smoking is prohibited.
+
+The suspect, who was later identified as Devin Donovan was approached and informed about the violation.
+The suspect was asked to cease smoking immediately.
+The incident was documented for further action.
+
+
+-----------------------------------
+       Grocery Store Receipt
+-----------------------------------
+
+Store Name: Fresh Mart
+Address: 123 Main Street, Springfield
+Phone: (666) 666-6666
+Date: April 15, 2004
+Register: 007
+Cashier: Jane Smith
+
+-----------------------------------
+
+| Qty |     Description       |  Price  |
+|-----|-----------------------|---------|
+|  50 |   Hellboro Cigarettes | $150.00 |
+
+-----------------------------------
+
+Subtotal:          $150.00
+Tax (7%):           $10.50
+Total:             $160.50
+
+-----------------------------------
+
+Thank you for shopping at Fresh Mart!
