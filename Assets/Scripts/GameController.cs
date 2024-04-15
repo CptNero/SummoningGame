@@ -13,13 +13,10 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI dialogueTextMesh;
 
-<<<<<<< HEAD
     public TextMeshProUGUI responseTextMesh;
-=======
     public CircleHandler circleHandler;
 
     public Hammer hammer;
->>>>>>> refs/remotes/origin/dev
 
     // Events
     public delegate void ChangeSinner(string sinnerName);
