@@ -7,6 +7,8 @@ using System;
 public class WobblyText : MonoBehaviour
 {
    public TMP_Text textComponent;
+
+   public float wobblyRate = 0.01f;
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +28,7 @@ public class WobblyText : MonoBehaviour
             for(int j = 0; j < 4; j++)
             {
                 var orig = verts[charinfo.vertexIndex + j];
-                verts[charinfo.vertexIndex + j] = orig + new Vector3(1,Mathf.Sin(Time.time*2 + orig.x * 0.1f) * 10, 0);
+                verts[charinfo.vertexIndex + j] = orig + new Vector3(1,Mathf.Sin(Time.time*2 + orig.x * wobblyRate) * 10, 0);
             }
         }
 

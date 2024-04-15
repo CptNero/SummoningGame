@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Emotions
+    m_Hash: 739874686
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Happy
+      m_Hash: 1059892429
+      m_Sprite: {fileID: 21300000, guid: 730d6f77ea5dfa348b1a1a2a04b07293, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 730d6f77ea5dfa348b1a1a2a04b07293, type: 3}
+    - m_Name: Neutral
+      m_Hash: 731503724
+      m_Sprite: {fileID: 21300000, guid: 5de2610912ff42241916a4a8cc3f776d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 5de2610912ff42241916a4a8cc3f776d, type: 3}
+    - m_Name: Angry
+      m_Hash: 16779677
+      m_Sprite: {fileID: 21300000, guid: 62f125fc1ac3f3b47959e925465503ac, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 21300000, guid: 62f125fc1ac3f3b47959e925465503ac, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 3
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638487941575167118
+  m_Version: 1

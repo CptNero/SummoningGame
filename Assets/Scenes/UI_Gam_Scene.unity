@@ -1277,6 +1277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 638862877}
+  wobblyRate: 0.01
 --- !u!114 &638862877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11781,6 +11782,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayTextMesh: {fileID: 568186941}
   dialogueTextMesh: {fileID: 638862877}
+  circleHandler: {fileID: 1663895630}
+  hammer: {fileID: 468913973}
 --- !u!4 &1663895629
 Transform:
   m_ObjectHideFlags: 0
@@ -11808,7 +11811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6baccdfbb6ee244494f803e50b7c739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentlyPressedButton: {fileID: 0}
   button1: {fileID: 8138484965055828484}
   button2: {fileID: 3704973986208777482}
   button3: {fileID: 4901565443470423225}
@@ -17144,6 +17146,10 @@ PrefabInstance:
       propertyPath: circleHandler
       value: 
       objectReference: {fileID: 1663895630}
+    - target: {fileID: 701506230690977145, guid: 6f9ddef5d3dfd3f4aafb50581e0de850, type: 3}
+      propertyPath: m_Name
+      value: Circle_0
+      objectReference: {fileID: 0}
     - target: {fileID: 1132065485071541373, guid: 6f9ddef5d3dfd3f4aafb50581e0de850, type: 3}
       propertyPath: circleHandler
       value: 
