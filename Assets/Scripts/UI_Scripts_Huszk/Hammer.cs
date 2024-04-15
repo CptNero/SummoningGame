@@ -11,7 +11,7 @@ public class Hammer : MonoBehaviour
     Animator animator;
     [SerializeField] AudioSource audioEffectSource;
     ParticleSystem particleSys;
-
+    
     public delegate void HammerWasClicked();
 
     public static event HammerWasClicked OnHammerWasClicked;
