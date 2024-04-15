@@ -40,6 +40,10 @@ public class DefaultState : IState {
             }
         }
 
+        if (!lastResult) {
+            controller.SetText(controller.HighlightText(bufferContents, "red"));
+        }
+
         controller.CallBroadcastHintResult(lastHint, lastResult);
         controller.charBuffer.Clear();
     }
