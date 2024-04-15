@@ -34,36 +34,38 @@ public class DefaultState : IState {
                     controller.SetDialogueText(controller.HighlightDialogueText(bufferContents, "green"));
                     lastResult = true;
                     lastHint = bufferContents;
+                    break;
                 }
 
                 if (!lastResult) {
                     lastHint = bufferContents;
                     controller.SetDialogueText(controller.HighlightDialogueText(bufferContents, "red"));
-                    break;
                 }
             }
         }
 
         // search in evidence
-        foreach(var keywordWithResponse in sinner.keywordsWithResponses)
-        {
-            var bufferContentsInLower = bufferContents.ToLower();
-            var expressionInLower = keywordWithResponse.keyword.ToLower();
-
-            if (bufferContentsInLower.Equals(expressionInLower))
+        if (sinner.keywordsWithResponses != null) {
+            foreach(var keywordWithResponse in sinner.keywordsWithResponses)
             {
-                controller.SetEvidenceText(controller.HighlightEvidenceText(bufferContents, "green"));
-                lastResult = true;
-                lastHint = bufferContents;
-                response = keywordWithResponse.response;
-            }
+                var bufferContentsInLower = bufferContents.ToLower();
+                var expressionInLower = keywordWithResponse.keyword.ToLower();
 
-            if (!lastResult)
-            {
-                lastHint = bufferContents;
-                controller.SetEvidenceText(controller.HighlightEvidenceText(bufferContents, "red"));
-                response = defaultResponseIfWrong;
-                break;
+                if (bufferContentsInLower.Equals(expressionInLower))
+                {
+                    controller.SetEvidenceText(controller.HighlightEvidenceText(bufferContents, "green"));
+                    lastResult = true;
+                    lastHint = bufferContents;
+                   response = keywordWithResponse.response;
+                }
+
+                if (!lastResult)
+                {
+                    lastHint = bufferContents;
+                    controller.SetEvidenceText(controller.HighlightEvidenceText(bufferContents, "red"));
+                    response = defaultResponseIfWrong;
+                    break;
+                }
             }
         }
 

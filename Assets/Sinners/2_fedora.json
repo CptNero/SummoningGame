@@ -5,11 +5,12 @@
         "age": "42",
         "sins": [ "Murder", "Partnercide" ]
     },
-    "evidence": "some evidence some more evidence asd some more evidence",
+    "hintCount": 3,
+    "evidence": "Murdered his partner.",
     "keywordsWithResponses": [
         {
-            "keyword": "asd",
-            "response": "lol",
+            "keyword": "Partner",
+            "response": "Please dont remind me",
             "emotion": "angry"
         }
     ],
@@ -23,8 +24,17 @@
         {
             "speakerName": "Samuel",
             "emotion": "Sad",
-            "hints": [],
-            "text": "This town will never be the same."
+            "hints": [
+                {
+                    "sinIdx": 0,
+                    "expression": "town"
+                },
+                {
+                    "sinIdx": 2,
+                    "expression": "same"
+                }
+            ],
+            "text": "This (0) will never be the (1)."
         }
     ],
     "correctLayer": 7
