@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,14 @@ public class OpenOnDoubleTapController : MonoBehaviour
     public GameObject objectToOpen;
 
     public bool isOpen = false;
+    public AudioClip openAudioClip;
+    public AudioClip closeAudioClip;
+
+    public event EventHandler<OnInteractionEventArgs> OnInteraction;
+    public class OnInteractionEventArgs: EventArgs
+    {
+        public AudioClip audioClip;
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +32,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Close();
+            PlayCloseSound();
         }
     }
 
@@ -45,6 +55,8 @@ public class OpenOnDoubleTapController : MonoBehaviour
     {
         // TODO: animation maybe?
         Open();
+        PlayOpenSound();
+
     }
 
     private void Open()
@@ -57,5 +69,14 @@ public class OpenOnDoubleTapController : MonoBehaviour
     {
         isOpen = false;
         objectToOpen.SetActive(isOpen);
+    }
+
+    private void PlayOpenSound()
+    {
+        OnInteraction?.Invoke(this,new OnInteractionEventArgs{audioClip = closeAudioClip});
+    }
+    private void PlayCloseSound()
+    {
+        OnInteraction?.Invoke(this,new OnInteractionEventArgs{audioClip = closeAudioClip});
     }
 }
