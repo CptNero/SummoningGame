@@ -57,6 +57,7 @@ public class SinnerDataModel
     public string assetName;
 
     public DocumentInfo documentInfo;
+    public uint hintCount;
     public string evidence;
     public List<KeywordsWithResponses> keywordsWithResponses;
     public List<DialogueEntry> dialogue;

@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -97,6 +99,8 @@ public class GameController : MonoBehaviour
 
         public SinnerState sinnerState;
 
+        public HashSet<string> evidenceFound;
+
         public void SetNextSinner() {
             if (!(currentSinnerIdx + 1 < sinners.Count)) {
                 return;
@@ -111,8 +115,8 @@ public class GameController : MonoBehaviour
 
     internal GameState gameState {get; private set;}
 
-    void SetDayText(uint dayIdx) {
-        dayTextMesh.SetText("Day " + dayIdx.ToString());
+    void SetEvidenceFoundText() {
+        dayTextMesh.SetText($"Evidence found:  {gameState.evidenceFound.Count} / {gameState.sinnerState.data.hintCount}");
     }
 
     void SetDialogueText(string text) {
@@ -130,11 +134,19 @@ public class GameController : MonoBehaviour
     }
 
     void SetResult(string hint, string response, bool result) {
-        responseTextMesh.text = response;
-        StartCoroutine(MakeTextDisappear());
+        if (result) {
+            responseTextMesh.text = response;
+            StartCoroutine(MakeTextDisappear());
+            gameState.evidenceFound.Add(hint);
+            SetEvidenceFoundText();
+        }
     }
 
     void Judgement() {
+        if (gameState.evidenceFound.Count != gameState.sinnerState.data.hintCount) {
+            return;
+        }
+
         var selectedCircleIdx = int.Parse(circleHandler.currentlyPressedButton.name.ToCharArray().Last().ToString());
         if (selectedCircleIdx == gameState.sinnerState.data.correctLayer) {
             Debug.Log("You were correct!");
@@ -143,6 +155,8 @@ public class GameController : MonoBehaviour
         }
 
         gameState.SetNextSinner();
+        gameState.evidenceFound.Clear();
+        SetEvidenceFoundText();
         SetDialogueText(gameState.sinnerState.GetNextDialogue());
     }
 
@@ -159,14 +173,15 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Awake() {
         gameState = new() {
-            sinners = SinnerDataModel.LoadSinnersFromJson()
+            sinners = SinnerDataModel.LoadSinnersFromJson(),
+            evidenceFound = new(),
         };
     }
 
     void Start() {
         gameState.SetNextSinner();
         SetDialogueText(gameState.sinnerState.GetNextDialogue());
-        SetDayText(gameState.currentDay);
+        SetEvidenceFoundText();
     }
 
     // Update is called once per frame
