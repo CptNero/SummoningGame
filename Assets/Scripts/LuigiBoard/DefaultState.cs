@@ -56,7 +56,8 @@ public class DefaultState : IState {
                     controller.SetEvidenceText(controller.HighlightEvidenceText(bufferContents, "green"));
                     lastResult = true;
                     lastHint = bufferContents;
-                   response = keywordWithResponse.response;
+                    response = keywordWithResponse.response;
+                    break;
                 }
 
                 if (!lastResult)
@@ -64,7 +65,6 @@ public class DefaultState : IState {
                     lastHint = bufferContents;
                     controller.SetEvidenceText(controller.HighlightEvidenceText(bufferContents, "red"));
                     response = defaultResponseIfWrong;
-                    break;
                 }
             }
         }

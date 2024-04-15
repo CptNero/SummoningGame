@@ -1,0 +1,44 @@
+{
+    "assetName": "NormieSinner",
+    "documentInfo": {
+        "name": "Michael Martin",
+        "age": 56,
+        "sins": ["Malware Distribution" ],
+        "causeOfDeath": "Corona virus"
+   },
+   "hintCount": 2,
+   "keywordsWithResponses": [
+    {
+      "keyword": "virus",
+      "response": "Oh yeah, about that...I thought won a new iPhone! So I sent my details. I mean I already had one but...",
+      "emotion": "Nervous"
+    },
+    {
+      "keyword": "ransomware",
+      "response": "All the computers were done for. As were our files. I was fired on the spot.",
+      "emotion": "Sad"
+    }
+   ],
+    "dialogue": [
+        {
+            "speakerName": "Michael",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Hello!"
+        },
+        {
+            "speakerName": "Michael",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "My name is Michael Martin."
+        },
+        {
+            "speakerName": "Michael",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "I worked in finance for over 20 years and I have earned quite well for myself."
+        }
+    ],
+    "correctLayer": 4,
+    "evidence": "-----------------------------------\n Search History\n-----------------------------------\n- amazong com\n- how to select box in excel\n- how to delete box in excel\n- amazong co\n- teams where to find chat\n- excel where to find tabs\n- e mail dot com\n- email log in\n- forgot passowrd for emal\n- password reset email\n- why file dont open\n- how to delete virus\n- antivirus download\n-----------------------------------\n Paycheck Statement\n-----------------------------------\nEmployee Name: Michael Martin\nEmployee ID: AW123456\nPosition: Senior Vice President, Finance\nCompany: Wealth & Co. Investment Bank\nAddress: 456 Wall Street, New York, NY\nPhone: (666) 666-6666\nPay Period: April 1, 2004 - April 15, 2004\nPay Date: April 30, 2004\n-----------------------------------\n| Description | Amount |\n|----------------------|-------------|\n| Base Salary | $75,000.00 |\n| Bonus | $250,000.00 |\n| Stock Options | $500,000.00 |\n| Total Gross Income | $825,000.00 |\n-----------------------------------\n"
+}

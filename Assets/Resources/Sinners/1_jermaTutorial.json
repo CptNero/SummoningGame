@@ -2,9 +2,13 @@
     "assetName": "JermaSinner",
     "documentInfo": {
         "name": "Andy",
-        "age": "38",
+        "age": 38,
+        "causeOfDeath": "Meatgrinder",
         "sins": ["Being handsome"]
     },
+    "hintCount": 0,
+    "keywordsWithResponses": [
+    ],
     "dialogue": [
         {
             "speakerName": "Jeremy",
@@ -91,5 +95,6 @@
             "text": "If you could send me there that would be just great."
         }
     ],
-    "correctLayer": 6
+    "correctLayer": 6,
+    "evidence": "Nothing to see here."
 }

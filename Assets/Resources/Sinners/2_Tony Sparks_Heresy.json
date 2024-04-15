@@ -1,0 +1,54 @@
+{
+    "assetName": "FedoraSinner",
+    "documentInfo": {
+        "name": "Tony Sparks",
+        "age": 40,
+        "causeOfDeath": "REDACTED",
+        "sins": ["Food Safety Violation"]
+    },
+    "hintCount": 4,
+    "keywordsWithResponses": [
+      {
+        "keyword": "Spaghetti",
+        "response": "Oh, who cares about some damn noodles? It doesn't matter how they're boiled, I say!",
+        "emotion": "Angry"
+      },
+      {
+        "keyword": "Grandma",
+        "response": "Oh no! You have a testimonial from her? How the hell did that even get here? All over some damn Spaghetti.",
+        "emotion": "Nervous"
+      },
+      {
+        "keyword": "Mafia",
+        "response": "Yes, it's true. I have blood on my hands.",
+        "emotion": "Sad"
+      },
+      {
+        "keyword": "recipe",
+        "response": "Oh that old thing? Yeah, that recipe is a family heirloom of sorts I guess. My grandma loved food religiously.",
+        "emotion": "Neutral"
+      }
+    ],
+    "dialogue": [
+        {
+            "speakerName": "Tony",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Hello."
+        },
+        {
+            "speakerName": "Tony",
+            "emotion": "Sad",
+            "hints": [],
+            "text": "My name is Tony, I might not have lived the most … exemplary life, but a good life."
+        },
+        {
+            "speakerName": "Tony",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "I hope you find it in your heart to forgive my decisions."
+        }
+    ],
+    "correctLayer": 6,
+    "evidence": "Testimonial of Grandma Sparks\nMy grandchild was always a very sweet kid,\n although he sometimes hung out with a weird crowd.\n They all loved wearing all black suits and fedoras.\n He was always busy, I'm sure they had lots of fun together, \n whatever they did. They called themselves the\n Mafia or something. He wouldn’t really talk about it.\n But one thing that my heart couldn’t bear was when\n he entered the kitchen. He never respected the food,\n by god he would break Spaghetti before boiling,\n could you imagine!\n\n-----------------------------------\n Grandma Sparks' perfect Spaghetti recipe\n-----------------------------------\nIngredients:\n\n 1 pound (450g) spaghetti\n 2 tablespoons olive oil\n 4 cloves garlic, minced\n 1 onion, finely chopped\n 1 pound (450g) ground beef\n 1 can (28 ounces) crushed tomatoes\n 2 teaspoons dried oregano\n 1 teaspoon dried basil\n Salt and pepper to taste\n Grated Parmesan cheese for serving\n Fresh basil leaves for garnish\n\n Note: If you respect your heritage and the \n culture of food, never ever break the un-boiled \n Spaghetti in half! Do not betray your heritage\n \n like that! Some people in our family\n \n consider food their religion!\nEnjoy!"
+}

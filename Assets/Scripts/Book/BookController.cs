@@ -16,12 +16,17 @@ public class BookController : MonoBehaviour
     public GameController gameController;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         // TODO: load for current ghost
         LoadPageContents(pathToPages);
 
         LoadPage(0);
+    }
+
+    void OnDisable()
+    {
+        pages.Clear();
     }
 
     // Update is called once per frame
@@ -52,7 +57,7 @@ public class BookController : MonoBehaviour
     List<Page> pages = new();
     int currentPageIndex = 0;
 
-    void LoadPageContents(string path)
+    public void LoadPageContents(string path)
     {
         if (path == "evidence")
         {
@@ -64,6 +69,7 @@ public class BookController : MonoBehaviour
             var pageContent =
                 "Name: " + currentSinner.documentInfo.name + "\n"
                 + "Age: " + currentSinner.documentInfo.age + "\n"
+                + "Cause of death: " + currentSinner.documentInfo.causeOfDeath + "\n"
                 + "Sins: ";
             foreach(var sin in currentSinner.documentInfo.sins)
             {
@@ -74,7 +80,7 @@ public class BookController : MonoBehaviour
     }
 
     // NOTE: we are indexing pages from 0
-    void LoadPage(int index)
+    public void LoadPage(int index)
     {
         currentPageIndex = index;
 

@@ -21,6 +21,14 @@ public class OpenOnDoubleTapController : MonoBehaviour
         public AudioClip audioClip;
     }
 
+    void OnEnable() {
+        Hammer.OnHammerWasClicked += Close;
+    }
+
+    void OnDisable() {
+        Hammer.OnHammerWasClicked -= Close;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -40,7 +48,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
     }
 
     private void OnMouseDown()
-    { 
+    {
         if(firstTap)
         {
             lastTimeTapped = Time.time;
@@ -51,7 +59,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
             OnDoubleTap();
             firstTap = true;
         }
- 
+
     }
 
     private void OnDoubleTap()
@@ -66,7 +74,7 @@ public class OpenOnDoubleTapController : MonoBehaviour
         isOpen = true;
         objectToOpen.SetActive(isOpen);
     }
-        
+
     private void Close()
     {
         isOpen = false;

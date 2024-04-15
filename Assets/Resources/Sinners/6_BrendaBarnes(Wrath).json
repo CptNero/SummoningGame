@@ -1,0 +1,44 @@
+{
+    "assetName": "KarenSinner",
+    "documentInfo": {
+        "name": "Brenda Barnes",
+        "age": 48,
+        "causeOfDeath": "Just a glass of wine.",
+        "sins": ["Disorderly Conduct"]
+    },
+    "hintCount": 2,
+    "keywordsWithResponses": [
+      {
+        "keyword": "report",
+        "response": "Ugh! Yes! They told me they didn't have my favorite type of toast! Unbelievable!!",
+        "emotion": "Angry"
+      },
+      {
+        "keyword": "aggressive",
+        "response": "Aggressive! How rude! Well, I can get a bit heated sometimes in arguments. But I was right!",
+        "emotion": "Angry"
+      }
+    ],
+    "dialogue": [
+        {
+            "speakerName": "Brenda",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Ugh, what do you want?"
+        },
+        {
+            "speakerName": "Brenda",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "Sins? Who do you think you are?"
+        },
+        {
+            "speakerName": "Brenda",
+            "emotion": "Sad",
+            "hints": [],
+            "text": "Tsk, well let's get this over with quick, then! "
+        }
+    ],
+    "correctLayer": 5,
+    "evidence": "-----------------------------------\n Hell P.D. Report\n-----------------------------------\nIncident Description:\nMs. Barnes was shouting loudly, using profanity,\n and behaving aggressively towards the staff and\n other patrons. Her behavior disrupted the peaceful\n atmosphere of the establishment and caused alarm\n among the customers. Despite multiple warnings,\n Ms. Barnes persisted in her disorderly conduct,\n creating a hostile environment for all present.\nDue to the severity of her behavior and the\n disruption caused, she was subsequently placed\n under arrest for disorderly conduct.\nNo one was harmed during the incident.\n\nBrenda Barnes was noted down as an aggressive resident in [REDACTED]"
+}
