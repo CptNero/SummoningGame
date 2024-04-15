@@ -68,7 +68,7 @@ public class SinnerDataModel
     }
 
     public static List<SinnerDataModel> LoadSinnersFromJson() {
-        var sinnersDir = Path.Join(Application.dataPath, "Sinners");
+        var sinnersDir = Path.Join(Application.dataPath, "Resources/Sinners");
         var directoryInfo = new DirectoryInfo(sinnersDir);
         var sinnerJsons = directoryInfo.GetFiles("*.json");
 

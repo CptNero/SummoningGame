@@ -1,7 +1,9 @@
 fileFormatVersion: 2
 guid: 37c43b4e61272f0438d01f461acf3c20
+labels:
+- Character
 DefaultImporter:
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: assets
   assetBundleVariant: 
