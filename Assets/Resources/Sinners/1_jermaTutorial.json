@@ -78,6 +78,12 @@
         },
         {
             "speakerName": "Jeremy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "But here is a quick summary"
+        },
+        {
+            "speakerName": "Jeremy",
             "emotion": "Angry",
             "hints": [],
             "text": "Good luck - I'll see you at the end of your term."

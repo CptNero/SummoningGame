@@ -1,12 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -105,7 +101,7 @@ public class GameController : MonoBehaviour
 
         public void SetNextSinner() {
             if (!(currentSinnerIdx + 1 < sinners.Count)) {
-                return;
+                SceneManager.LoadScene("EndScene");
             }
 
             currentSinnerIdx += 1;
