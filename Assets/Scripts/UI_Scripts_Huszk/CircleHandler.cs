@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CircleHandler : MonoBehaviour
 {
-    public GameObject currentlyPressedButton;
+    public GameObject currentlyPressedButton {get; set;}
     [SerializeField] GameObject button1;
     [SerializeField] GameObject button2;
     [SerializeField] GameObject button3;
@@ -28,7 +28,7 @@ public class CircleHandler : MonoBehaviour
     }
     List<Circle> circles = new List<Circle>();
 
-    public Circle currentCircle = new Circle("No Cirlce Selected",null);
+    public Circle currentCircle = new Circle("Purgatory", null);
     void Start()
     {
         const string circleString = "Circle";
@@ -41,8 +41,10 @@ public class CircleHandler : MonoBehaviour
         circles.Add(new Circle($"VII. {circleString}",button7));
         circles.Add(new Circle($"VIII. {circleString}",button8));
         circles.Add(new Circle($"IX. {circleString}",button9));
-        circles.Add(new Circle("Purgatory",button10)); 
-        
+        circles.Add(new Circle("Purgatory",button10));
+
+        currentlyPressedButton = circles.Last().button;
+        currentCircle = circles.Last();
     }
     void Update()
     {
@@ -53,6 +55,5 @@ public class CircleHandler : MonoBehaviour
             currentCircle = circles.Find(obj => obj.button == currentlyPressedButton);
         }
         }
-        Debug.Log(currentCircle.displayName);
     }
 }

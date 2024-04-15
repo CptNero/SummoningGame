@@ -23,7 +23,6 @@ public class SoundEffects : MonoBehaviour
         docs.OnInteraction += PlaySound2;
         luigy.OnInteraction += PlaySound2;
         paper.OnInteraction += PlaySound2;
-        
     }
 
     private void PlaySound(object sender, OpenDrawer.OnDrawerInteractionEventArgs e)
@@ -34,7 +33,7 @@ public class SoundEffects : MonoBehaviour
     {
         audioPlayer.PlayOneShot(e.audioClip);
     }
-   
-   
-   
+
+
+
 }
