@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,23 @@ using UnityEngine;
 public class OpenDrawer : MonoBehaviour
 {
     [SerializeField] GameObject drawerUI;
-    bool drawerUIOpen = false;
+    [SerializeField] SoundEffects soundEffects;
+    public AudioClip openDrawer;
+    public AudioClip closeDrawer;
+
+    public event EventHandler<OnDrawerInteractionEventArgs> OnDrawerInteraction;
+    public class OnDrawerInteractionEventArgs: EventArgs
+    {
+        public AudioClip audioClip;
+    }
+
     void OnMouseDown()
     {
         if(!drawerUI.activeSelf)
         {
         drawerUI.SetActive(true);
-        drawerUIOpen = true;
+        OnDrawerInteraction?.Invoke(this,new OnDrawerInteractionEventArgs{audioClip = openDrawer});
+        //soundEffects.audioPlayer.PlayOneShot(soundEffects.fiokOpen);
         }
     }
     void Update()
@@ -20,6 +31,8 @@ public class OpenDrawer : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
+                soundEffects.audioPlayer.PlayOneShot(soundEffects.fiokClose);
+                OnDrawerInteraction?.Invoke(this,new OnDrawerInteractionEventArgs{audioClip = closeDrawer});
                 drawerUI.SetActive(false);
             }
         }

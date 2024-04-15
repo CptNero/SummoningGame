@@ -13,7 +13,6 @@ public class Hammer : MonoBehaviour
     ParticleSystem particleSys;
     
     bool animIsPlaying = false;
-    float timerForHammerBase = 0;
     float timerForStopAnim = 0;
     void Start()
     {
@@ -65,14 +64,6 @@ public class Hammer : MonoBehaviour
     void PlaySoundHandler()
     {   
         audioEffectSource.Play();    
-    }
-
-    //Not in use I couldn't figure out how to get info when the animation ends
-     bool AnimatorIsPlaying()
-    {
-        //return animator.GetCurrentAnimatorStateInfo(0).IsName("Base_Layer.Slam");
-        return animator.GetCurrentAnimatorStateInfo(0).length >
-           animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
 
     void PlayHammerParticleEffect()

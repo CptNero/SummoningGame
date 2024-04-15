@@ -18,11 +18,11 @@ public class CircleHandler : MonoBehaviour
     [SerializeField] GameObject button10;
     public class Circle
     {
-        public string name;
+        public string displayName;
         public GameObject button;
         public Circle (string definedName, GameObject definedObject)
         {
-            name = definedName;
+            displayName = definedName;
             button = definedObject;
         }
     }
@@ -31,21 +31,19 @@ public class CircleHandler : MonoBehaviour
     public Circle currentCircle = new Circle("No Cirlce Selected",null);
     void Start()
     {
-        
-        circles.Add(new Circle("I. Cricle",button1));
-        circles.Add(new Circle("II. Cricle",button2));
-        circles.Add(new Circle("III. Cricle",button3));
-        circles.Add(new Circle("VI. Cricle",button4));
-        circles.Add(new Circle("V. Cricle",button5));
-        circles.Add(new Circle("VI. Cricle",button6));
-        circles.Add(new Circle("VII. Cricle",button7));
-        circles.Add(new Circle("VIII. Cricle",button8));
-        circles.Add(new Circle("IX. Cricle",button9));
+        const string circleString = "Circle";
+        circles.Add(new Circle($"I. {circleString}",button1));
+        circles.Add(new Circle($"II. {circleString}",button2));
+        circles.Add(new Circle($"III. {circleString}",button3));
+        circles.Add(new Circle($"VI. {circleString}",button4));
+        circles.Add(new Circle($"V. {circleString}",button5));
+        circles.Add(new Circle($"VI. {circleString}",button6));
+        circles.Add(new Circle($"VII. {circleString}",button7));
+        circles.Add(new Circle($"VIII. {circleString}",button8));
+        circles.Add(new Circle($"IX. {circleString}",button9));
         circles.Add(new Circle("Purgatory",button10)); 
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(currentlyPressedButton!=null)
@@ -55,7 +53,6 @@ public class CircleHandler : MonoBehaviour
             currentCircle = circles.Find(obj => obj.button == currentlyPressedButton);
         }
         }
-        
-        Debug.Log(currentCircle.name);
+        Debug.Log(currentCircle.displayName);
     }
 }

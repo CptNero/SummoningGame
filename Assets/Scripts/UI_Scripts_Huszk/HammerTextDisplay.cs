@@ -14,6 +14,6 @@ public class HammerTextDisplay : MonoBehaviour
     }
     void Update()
     {
-        textDisplay.text = circleHandler.currentCircle.name;
+        textDisplay.text = circleHandler.currentCircle.displayName;
     }
 }
