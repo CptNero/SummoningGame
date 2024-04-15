@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -7,9 +8,12 @@ public class DrawerButton : MonoBehaviour
 {
     [SerializeField] CircleHandler circleHandler;
     SpriteRenderer buttonEffect;
+    AudioSource audioSource;
+    [SerializeField] AudioClip click;
     Color color;
     void Start()
     {
+        audioSource = GetComponentInParent<AudioSource>();
         buttonEffect = GetComponent<SpriteRenderer>();
         color = buttonEffect.color;
         color.a = 0f;
@@ -18,6 +22,7 @@ public class DrawerButton : MonoBehaviour
     void OnMouseDown()
     {
         circleHandler.currentlyPressedButton = gameObject;
+        audioSource.PlayOneShot(click);
         Debug.Log("Click");
     }
     

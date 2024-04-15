@@ -31,7 +31,6 @@ public class OpenDrawer : MonoBehaviour
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                soundEffects.audioPlayer.PlayOneShot(soundEffects.fiokClose);
                 OnDrawerInteraction?.Invoke(this,new OnDrawerInteractionEventArgs{audioClip = closeDrawer});
                 drawerUI.SetActive(false);
             }
