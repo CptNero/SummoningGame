@@ -59,7 +59,7 @@ public class BookController : MonoBehaviour
 
 
 
-    List<Page> pages = new(); 
+    List<Page> pages = new();
     int currentPageIndex = 0;
 
     void LoadPageContents(string path, string extension)
@@ -82,7 +82,7 @@ public class BookController : MonoBehaviour
             Debug.Log("directory not found");
         }
 
-        
+
     }
 
     // NOTE: we are indexing pages from 0
@@ -91,7 +91,7 @@ public class BookController : MonoBehaviour
         currentPageIndex = index;
 
         UpdateCurrentPageContent();
-        luigiBoardController.SetUnformattedText(pages[currentPageIndex].content.text);
+        // luigiBoardController.SetUnformattedText(pages[currentPageIndex].content.text);
     }
 
     public GameObject currentPageObject;

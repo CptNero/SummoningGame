@@ -12,7 +12,7 @@ public class LuigiBoardController : MonoBehaviour
     private GameObject marker;
 
     [SerializeField]
-    internal TextMeshPro textMesh;
+    internal TextMeshProUGUI textMesh;
 
     private string unformattedText {get; set;}
 
