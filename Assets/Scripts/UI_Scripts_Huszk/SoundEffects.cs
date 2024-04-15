@@ -11,6 +11,7 @@ public class SoundEffects : MonoBehaviour
     [SerializeField] OpenOnDoubleTapController luigy;
     [SerializeField] OpenOnDoubleTapController paper;
     [SerializeField] OpenOnDoubleTapController guide;
+    [SerializeField] OpenOnDoubleTapController guide2;
     void Start()
     {
         audioPlayer = GetComponent<AudioSource>();
@@ -19,6 +20,7 @@ public class SoundEffects : MonoBehaviour
         luigy.OnInteraction += PlaySound2;
         paper.OnInteraction += PlaySound2;
         guide.OnInteraction += PlaySound2;
+        guide2.OnInteraction += PlaySound2;
     }
 
     private void PlaySound(object sender, OpenDrawer.OnDrawerInteractionEventArgs e)
