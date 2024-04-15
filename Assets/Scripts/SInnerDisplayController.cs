@@ -7,6 +7,7 @@ public class SinnerDisplayController : MonoBehaviour
     private GameObject currentSinner;
 
     private List<string> sinnerAssetsPaths = new List<string>() {
+        "Prefabs/JermaSinner",
         "Prefabs/ChildSinner",
         "Prefabs/FedoraSinner",
     };

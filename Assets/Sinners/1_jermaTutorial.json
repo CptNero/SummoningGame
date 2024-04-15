@@ -1,0 +1,95 @@
+{
+    "assetName": "JermaSinner",
+    "documentInfo": {
+        "name": "Andy",
+        "age": "38",
+        "sins": ["Being handsome"]
+    },
+    "dialogue": [
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Hello there!"
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "Welcome to your new job here at Hell."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "Not to be confused with Shell."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "We are not that bad."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "Your task will be very simple."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "Each soul that is summoned here is guilty of a crime."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "It is your job to provide each of these poor souls with an adequate sentence."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "Finding that out will require some interrogation."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "For that, use your company provided, Ouija board."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Neutral",
+            "hints": [],
+            "text": "Dead souls have no ears, only mouths... for some reason."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "You can find our official guideline documents on your desk - you can check it as you work."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "Good luck - I'll see you at the end of your term."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Angry",
+            "hints": [],
+            "text": "By the way I have some business at the 6th layer."
+        },
+        {
+            "speakerName": "Jeremy",
+            "emotion": "Happy",
+            "hints": [],
+            "text": "If you could send me there that would be just great."
+        }
+    ],
+    "correctLayer": 6
+}

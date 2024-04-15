@@ -13,6 +13,10 @@ public class GameController : MonoBehaviour
 
     public TextMeshProUGUI dialogueTextMesh;
 
+    public CircleHandler circleHandler;
+
+    public Hammer hammer;
+
     // Events
     public delegate void ChangeSinner(string sinnerName);
     public delegate void ChangeSinnerEmotion(SinnerDataModel.Emotion emotion);
@@ -24,7 +28,6 @@ public class GameController : MonoBehaviour
     public static event ChangeSinner OnSinnerChange;
 
     public static event ChangeSinnerEmotion OnSinnerChangeEmotion;
-
 
     // Game state
     internal class SinnerState {
@@ -101,12 +104,26 @@ public class GameController : MonoBehaviour
         Debug.Log(result);
     }
 
+    void Judgement() {
+        var selectedCircleIdx = int.Parse(circleHandler.currentlyPressedButton.name.ToCharArray().Last().ToString());
+        if (selectedCircleIdx == gameState.sinnerState.data.correctLayer) {
+            Debug.Log("You were correct!");
+        } else {
+            Debug.Log("Wrong");
+        }
+
+        gameState.SetNextSinner();
+        SetDialogueText(gameState.sinnerState.GetNextDialogue());
+    }
+
     void OnEnable() {
         LuigiBoardController.OnBroadcastHintResult += SetResult;
+        Hammer.OnHammerWasClicked += Judgement;
     }
 
     void OnDisable() {
         LuigiBoardController.OnBroadcastHintResult -= SetResult;
+        Hammer.OnHammerWasClicked -= Judgement;
     }
 
     // Start is called before the first frame update
@@ -126,11 +143,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
-            SetDialogueText(gameState.sinnerState.GetNextDialogue());
-        }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow)) {
-            gameState.SetNextSinner();
             SetDialogueText(gameState.sinnerState.GetNextDialogue());
         }
     }

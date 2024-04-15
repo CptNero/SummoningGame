@@ -6,12 +6,16 @@ using UnityEngine;
 
 public class Hammer : MonoBehaviour
 {
-    
+
     [SerializeField] GameObject hammer;
     Animator animator;
     [SerializeField] AudioSource audioEffectSource;
     ParticleSystem particleSys;
-    
+
+    public delegate void HammerWasClicked();
+
+    public static event HammerWasClicked OnHammerWasClicked;
+
     bool animIsPlaying = false;
     float timerForStopAnim = 0;
     void Start()
@@ -19,28 +23,29 @@ public class Hammer : MonoBehaviour
         animator = hammer.GetComponent<Animator>();
         particleSys = hammer.GetComponentInChildren<ParticleSystem>();
     }
-    
+
     void OnMouseDown()
     {
         PlayHammerAnimation();
         PlayHammerParticleEffect();
+        OnHammerWasClicked();
     }
     void Update()
     {
        StopHammerAnimationHandler();
-       
+
     }
 
     public void PlayHammerAnimation()
     {
-        
+
         if(!animIsPlaying)
         {
             animator.SetBool("IsSlam",true);
             PlaySoundHandler();
             animIsPlaying = true;
         }
-       
+
     }
 
     public void StopHammerAnimationHandler()
@@ -62,8 +67,8 @@ public class Hammer : MonoBehaviour
     }
 
     void PlaySoundHandler()
-    {   
-        audioEffectSource.Play();    
+    {
+        audioEffectSource.Play();
     }
 
     void PlayHammerParticleEffect()
