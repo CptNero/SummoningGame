@@ -11,38 +11,39 @@ public class SinnerDisplayController : MonoBehaviour
         "Prefabs/FedoraSinner",
     };
 
-    private Dictionary<string, GameObject> sinnerAssets = new();
+    private Dictionary<string, GameObject> sinnerAssets;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    void OnEnable() {
+        GameController.OnSinnerChange += ChangeSinner;
+
+        sinnerAssets = new();
         foreach (var path in sinnerAssetsPaths) {
             sinnerAssets[path] = Resources.Load(path) as GameObject;
         }
     }
 
+    void OnDisable() {
+        GameController.OnSinnerChange -= ChangeSinner;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    void ChangeSinner(string sinnerAssetsPath) {
+        if (currentSinner != null) {
+                Destroy(currentSinner);
+        }
+
+        currentSinner = Instantiate(sinnerAssets["Prefabs/" + sinnerAssetsPath],
+                                    transform.position,
+                                    Quaternion.identity);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.PageUp)) {
-            if (currentSinner != null) {
-                Destroy(currentSinner);
-            }
-
-            currentSinner = Instantiate(sinnerAssets["Prefabs/ChildSinner"],
-                                        transform.position,
-                                        Quaternion.identity);
-        }
-
-        if (Input.GetKeyDown(KeyCode.PageDown)) {
-            if (currentSinner != null) {
-                Destroy(currentSinner);
-            }
-
-            currentSinner = Instantiate(sinnerAssets["Prefabs/FedoraSinner"],
-                                        transform.position,
-                                        Quaternion.identity);
-        }
-
     }
 }

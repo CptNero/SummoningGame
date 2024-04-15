@@ -3,6 +3,10 @@ using UnityEngine;
 public class DefaultState : IState {
     private Vector3 defaultPosition;
 
+    public bool lastResult {get; set;}
+
+    public string lastHint {get; set;}
+
     public DefaultState(LuigiBoardController controller, Vector3 position) : base(controller){
         defaultPosition = position;
     }
@@ -10,6 +14,9 @@ public class DefaultState : IState {
     public override void OnEnter() {
         controller.audioSource.PlayOneShot(controller.returnSfx);
         controller.SetMarkerPosition(defaultPosition);
+
+        lastResult = false;
+        lastHint = "";
 
         var bufferContents = new string(controller.charBuffer.ToArray());
         var sinner = controller.currentSinner;
@@ -20,16 +27,20 @@ public class DefaultState : IState {
                 var expressionInLower = hint.expression.ToLower();
 
                 if (bufferContentsInLower.Equals(expressionInLower)) {
-                    Debug.Log("Bingo:");
                     controller.SetText(controller.HighlightText(bufferContents, "green"));
-                    break;
-                } else {
+                    lastResult = true;
+                    lastHint = bufferContents;
+                }
+
+                if (!lastResult) {
+                    lastHint = bufferContents;
                     controller.SetText(controller.HighlightText(bufferContents, "red"));
-                    Debug.Log($"Wrong: {bufferContentsInLower} != {expressionInLower}");
+                    break;
                 }
             }
         }
 
+        controller.CallBroadcastHintResult(lastHint, lastResult);
         controller.charBuffer.Clear();
     }
 

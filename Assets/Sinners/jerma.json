@@ -1,4 +1,5 @@
 {
+    "assetName": "ChildSinner",
     "documentInfo": {
         "name": "Jeremy Elbertson",
         "age": "38",
@@ -38,7 +39,7 @@
                     "expression": "violence"
                 }
             ],
-            "text": "Bit of {1} here and there."
+            "text": "Bit of (1) here and there."
         },
         {
             "speakerName": "Jeremy",
@@ -53,7 +54,7 @@
                     "expression": "stolen F150 lightning"
                 }
             ],
-            "text": "Oh and that family of four that I {0} with my {1}. Totally unintentional."
+            "text": "Oh and that family of four that I (0) with my (1). Totally unintentional."
         }
     ],
     "correctLayer": 7

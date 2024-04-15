@@ -44,6 +44,8 @@ public class SinnerDataModel
         public string text;
     }
 
+    public string assetName;
+
     public DocumentInfo documentInfo;
     public List<DialogueEntry> dialogue;
     public uint correctLayer;

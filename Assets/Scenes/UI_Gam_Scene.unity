@@ -304,7 +304,11 @@ PrefabInstance:
     - target: {fileID: 2194428500743734763, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
       propertyPath: textMesh
       value:
-      objectReference: {fileID: 568186941}
+      objectReference: {fileID: 638862877}
+    - target: {fileID: 2194428500743734763, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
+      propertyPath: gameController
+      value:
+      objectReference: {fileID: 1663895628}
     - target: {fileID: 3072644936741725054, guid: 8a5023433adad4f48ad1aa4c8d16c3a8, type: 3}
       propertyPath: m_Name
       value: LuigiBoard
@@ -11800,6 +11804,52 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3512861816543008112, guid: 72d1d7428fe02401a8e7e5f17c31e3e0, type: 3}
   m_PrefabInstance: {fileID: 1326559950}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1663895627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1663895629}
+  - component: {fileID: 1663895628}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1663895628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663895627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dd48258529d7542a2a84bd1295b31d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  dayTextMesh: {fileID: 568186941}
+  dialogueTextMesh: {fileID: 638862877}
+--- !u!4 &1663895629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663895627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665204473
 GameObject:
   m_ObjectHideFlags: 0
@@ -17249,4 +17299,4 @@ SceneRoots:
   - {fileID: 835369665}
   - {fileID: 1326559950}
   - {fileID: 468913970}
-  - {fileID: 576005238}
+  - {fileID: 1663895629}

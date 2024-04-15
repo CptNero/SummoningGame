@@ -33,6 +33,10 @@ public class LuigiBoardController : MonoBehaviour
         return formattedText;
     }
 
+    public delegate void BroadcastHintResult(string hint, bool result);
+
+    public static event BroadcastHintResult OnBroadcastHintResult;
+
     public AudioSource audioSource;
 
     public AudioClip returnSfx;
@@ -65,6 +69,9 @@ public class LuigiBoardController : MonoBehaviour
 
     internal SinnerDataModel currentSinner {get; set;}
 
+    [SerializeField]
+    private GameController gameController;
+
     public void SetState(IState state) {
         currentState.OnExit();
         currentState = state;
@@ -74,6 +81,10 @@ public class LuigiBoardController : MonoBehaviour
     public void SetUnformattedText(string text)
     {
         unformattedText = text;
+    }
+
+    public void SetSinner(string sinnerName) {
+        currentSinner = sinners.Find(_ => _.assetName == sinnerName);
     }
 
     public Vector3 GetMarkerPosition() {
@@ -88,7 +99,14 @@ public class LuigiBoardController : MonoBehaviour
         return letterSfxs[Random.Range(0, letterSfxs.Count - 1)];
     }
 
+    public void CallBroadcastHintResult(string hint, bool result) {
+        OnBroadcastHintResult(hint, result);
+    }
+
     void OnEnable() {
+        GameController.OnDialogueTextChange += SetUnformattedText;
+        GameController.OnSinnerChange += SetSinner;
+
         markerDefaultPosition = marker.transform.position;
         defaultState = new DefaultState(this, markerDefaultPosition);
         onLetterState = new OnLetterState(this);
@@ -104,7 +122,7 @@ public class LuigiBoardController : MonoBehaviour
         }
 
         sinners = SinnerDataModel.LoadSinnersFromJson();
-        currentSinner = sinners.First();
+        currentSinner = sinners[gameController.gameState.currentSinnerIdx];
 
         letterSfxs = new List<AudioClip>{
             letterSfx1,
@@ -153,6 +171,10 @@ public class LuigiBoardController : MonoBehaviour
             {KeyCode.Alpha0, '0'},
             {KeyCode.Space, ' '},
         };
+    }
+
+    void OnDisable() {
+        GameController.OnDialogueTextChange -= SetUnformattedText;
     }
 
     // Update is called once per frame
